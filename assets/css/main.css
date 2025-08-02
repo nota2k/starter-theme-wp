@@ -1,45 +1,50 @@
 /**
  * Fichier CSS principal du thème moderne
- * Importe tous les composants et utilitaires nécessaires
+ * Ce fichier importe tous les styles du thème
  */
 
-/* Variables et configuration */
-@import '_variables.css';
+/* Variables CSS */
+@import "_variables.css";
 
-/* Base */
-@import 'base/reset.css';
-@import 'base/typography.css';
+/* Styles de base */
+@import "base/reset.css";
+@import "base/typography.css";
 
 /* Layout */
-@import 'layout/container.css';
+@import "layout/container.css";
 
 /* Composants */
-@import 'components/buttons.css';
-@import 'components/forms.css';
-@import 'components/cards.css';
-@import 'components/navigation.css';
-@import 'components/header.css';
-@import 'components/footer.css';
-
-/* Utilitaires */
-@import 'utilities/spacing.css';
-@import 'utilities/colors.css';
-@import 'utilities/display.css';
-
-/* WordPress spécifique */
-@import 'wordpress/blocks.css';
-@import 'wordpress/widgets.css';
-@import 'wordpress/comments.css';
-@import 'wordpress/posts.css';
+@import "components/header.css";
+@import "components/footer.css";
+@import "components/buttons.css";
 
 /* Patterns */
-@import 'patterns/services-grid.css';
-@import 'patterns/contact-section.css';
+@import "patterns/contact-section.css";
+@import "patterns/services-grid.css";
 
-/* Responsive */
-@import 'responsive/mobile.css';
-@import 'responsive/tablet.css';
-@import 'responsive/desktop.css';
+/* Utilitaires */
+@import "utilities/spacing.css";
 
-/* Print */
-@import 'print.css' print;
+/* Styles globaux personnalisés */
+body {
+    font-family: var(--wp--preset--font-family--primary);
+    line-height: var(--wp--custom--line-height--body);
+    color: var(--wp--preset--color--contrast);
+    background-color: var(--wp--preset--color--base);
+}
+
+/* Ensure full height layout */
+html,
+body {
+    min-height: 100vh;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}

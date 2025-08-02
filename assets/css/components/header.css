@@ -1,0 +1,276 @@
+/* ==========================================================================
+   HEADER STYLES
+   ========================================================================== */
+
+/* Header principal */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--wp--preset--color--base);
+    border-bottom: 1px solid var(--wp--preset--color--neutral);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Container du header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--wp--preset--spacing--medium) var(--wp--preset--spacing--large);
+    max-width: var(--wp--style--global--content-size);
+    margin: 0 auto;
+}
+
+/* Logo et titre du site */
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--small);
+}
+
+.site-logo {
+    flex-shrink: 0;
+}
+
+.site-logo img {
+    max-height: 48px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.site-logo img:hover {
+    transform: scale(1.05);
+}
+
+.site-title {
+    font-size: var(--wp--preset--font-size--large);
+    font-weight: var(--wp--custom--font-weight--bold);
+    color: var(--wp--preset--color--contrast);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-title:hover {
+    color: var(--wp--preset--color--primary);
+}
+
+.site-tagline {
+    font-size: var(--wp--preset--font-size--small);
+    color: var(--wp--preset--color--contrast-2);
+    margin-top: 2px;
+}
+
+/* Navigation principale */
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--medium);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--wp--preset--spacing--medium);
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    padding: var(--wp--preset--spacing--small);
+    color: var(--wp--preset--color--contrast);
+    text-decoration: none;
+    font-weight: var(--wp--custom--font-weight--medium);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus,
+.nav-menu .current-menu-item > a {
+    color: var(--wp--preset--color--primary);
+    background-color: var(--wp--preset--color--neutral);
+}
+
+/* Sous-menus */
+.nav-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--wp--preset--color--base);
+    border: 1px solid var(--wp--preset--color--neutral);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    z-index: 10;
+}
+
+.nav-menu li:hover .sub-menu,
+.nav-menu li:focus-within .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-menu .sub-menu a {
+    padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--medium);
+    border-bottom: 1px solid var(--wp--preset--color--neutral);
+}
+
+.nav-menu .sub-menu a:last-child {
+    border-bottom: none;
+}
+
+/* Bouton menu mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--wp--preset--color--contrast);
+    color: var(--wp--preset--color--contrast);
+    padding: var(--wp--preset--spacing--small);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background-color: var(--wp--preset--color--contrast);
+    color: var(--wp--preset--color--base);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle span:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+/* Animation du menu mobile */
+.menu-toggle.active span:first-child {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:last-child {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Actions du header (boutons, recherche) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--wp--preset--spacing--small);
+}
+
+.header-search {
+    position: relative;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    color: var(--wp--preset--color--contrast);
+    padding: var(--wp--preset--spacing--small);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.search-toggle:hover {
+    background-color: var(--wp--preset--color--neutral);
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .header-container {
+        padding: var(--wp--preset--spacing--small) var(--wp--preset--spacing--medium);
+    }
+    
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .main-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--wp--preset--color--base);
+        border-top: 1px solid var(--wp--preset--color--neutral);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+    }
+    
+    .main-navigation.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        padding: var(--wp--preset--spacing--medium);
+        gap: 0;
+    }
+    
+    .nav-menu a {
+        padding: var(--wp--preset--spacing--medium);
+        border-bottom: 1px solid var(--wp--preset--color--neutral);
+    }
+    
+    .nav-menu .sub-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        border: none;
+        box-shadow: none;
+        background-color: var(--wp--preset--color--neutral);
+        margin-left: var(--wp--preset--spacing--medium);
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: var(--wp--preset--spacing--small);
+    }
+    
+    .site-title {
+        font-size: var(--wp--preset--font-size--medium);
+    }
+    
+    .site-logo img {
+        max-height: 40px;
+    }
+}

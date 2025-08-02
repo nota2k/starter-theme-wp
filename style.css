@@ -1,13 +1,20 @@
-/*
-Theme Name: Thème Moderne
-Description: Un thème WordPress moderne avec Full Site Editing, système de blocs et patterns
-Version: 1.0.0
-Author: Votre Nom
-Text Domain: theme-moderne
-Domain Path: /languages
-Requires at least: 6.1
-Tested up to: 6.4
-Requires PHP: 8.0
-*/
+/**
+ * Theme Name: Thème Moderne
+ * Theme URI: https://example.com
+ * Description: Un thème WordPress moderne basé sur les blocs, conçu pour offrir une flexibilité maximale à l'utilisateur avec une interface d'édition intuitive.
+ * Author: Votre Nom
+ * Author URI: https://example.com
+ * Version: 1.0.0
+ * Requires at least: 6.0
+ * Tested up to: 6.4
+ * Requires PHP: 8.0
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: theme-moderne
+ * Tags: block-theme, full-site-editing, custom-colors, custom-typography, custom-spacing, featured-images, threaded-comments, translation-ready, blog, portfolio, business
+ */
 
-/* CSS de base - voir assets/css/ pour la structure détaillée */
+/*
+	Ce thème utilise principalement theme.json pour la configuration des styles.
+	Les styles CSS supplémentaires sont chargés depuis assets/css/main.css
+*/
