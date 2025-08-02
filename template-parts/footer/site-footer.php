@@ -143,20 +143,20 @@ $social_links = theme_moderne_get_social_links();
                             'meta_value' => 'page-legal.php'
                         ]);
                         
-                        if (empty($legal_pages)) {
-                            // Chercher par titre si pas de template spécifique
-                            $legal_titles = ['mentions légales', 'politique de confidentialité', 'conditions d\'utilisation'];
-                            foreach ($legal_titles as $title) {
-                                $page = get_page_by_title($title);
-                                if ($page) {
-                                    echo '<a href="' . get_permalink($page) . '" class="hover:text-white">' . get_the_title($page) . '</a>';
-                                }
-                            }
-                        } else {
-                            foreach ($legal_pages as $page) {
-                                echo '<a href="' . get_permalink($page) . '" class="hover:text-white">' . get_the_title($page) . '</a>';
-                            }
-                        }
+                        // if (empty($legal_pages)) {
+                        //     // Chercher par titre si pas de template spécifique
+                        //     $legal_titles = ['mentions légales', 'politique de confidentialité', 'conditions d\'utilisation'];
+                        //     foreach ($legal_titles as $title) {
+                        //         $page = the_title();
+                        //         if ($page) {
+                        //             echo '<a href="' . get_permalink($page) . '" class="hover:text-white">' . get_the_title($page) . '</a>';
+                        //         }
+                        //     }
+                        // } else {
+                        //     foreach ($legal_pages as $page) {
+                        //         echo '<a href="' . get_permalink($page) . '" class="hover:text-white">' . get_the_title($page) . '</a>';
+                        //     }
+                        // }
                         ?>
                     </nav>
                 </div>
