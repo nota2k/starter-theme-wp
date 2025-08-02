@@ -1,0 +1,45 @@
+/**
+ * Fichier CSS principal du thème moderne
+ * Importe tous les composants et utilitaires nécessaires
+ */
+
+/* Variables et configuration */
+@import '_variables.css';
+
+/* Base */
+@import 'base/reset.css';
+@import 'base/typography.css';
+
+/* Layout */
+@import 'layout/container.css';
+
+/* Composants */
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/cards.css';
+@import 'components/navigation.css';
+@import 'components/header.css';
+@import 'components/footer.css';
+
+/* Utilitaires */
+@import 'utilities/spacing.css';
+@import 'utilities/colors.css';
+@import 'utilities/display.css';
+
+/* WordPress spécifique */
+@import 'wordpress/blocks.css';
+@import 'wordpress/widgets.css';
+@import 'wordpress/comments.css';
+@import 'wordpress/posts.css';
+
+/* Patterns */
+@import 'patterns/services-grid.css';
+@import 'patterns/contact-section.css';
+
+/* Responsive */
+@import 'responsive/mobile.css';
+@import 'responsive/tablet.css';
+@import 'responsive/desktop.css';
+
+/* Print */
+@import 'print.css' print;
